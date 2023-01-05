@@ -13,7 +13,7 @@ Minimal task
     Click as Human Single    \#__next > main > div > aside > nav > a:nth-child(10)
     Click as Human Single    h6 >> text=RPA.Browser.Playwright
     Click as Human Multi    .ps--active-y a
-
+    Click as Human Single    a >> text=Quickstart
 
 
 *** Keywords ***
@@ -28,7 +28,7 @@ Starting a browser
 Click as Human Multi
     [Arguments]    ${locator}
     ${elements}=    Get Elements    ${locator}
-    FOR    ${element}    IN    @{elements}[:10]
+    FOR    ${element}    IN    @{elements}[:10]    #first ten!!
         Log    ${element}
         Click as Human Single    ${element}
     END
@@ -42,7 +42,7 @@ Click as Human Single
     ${mousePosition}=    Get mouse position
     Log    Current mouse position is ${mousePosition.x}, ${mousePosition.y}
     &{windowParameters}=    GetCoordCenter    ${cssPath}
-    ${move_list}=    genMoveMouseSteps    ${mousePosition.x}    ${mousePosition.y}    ${windowParameters.x}    ${windowParameters.y}    ${2}
+    ${move_list}=    genMoveMouseSteps    ${mousePosition.x}    ${mousePosition.y}    ${windowParameters.x}    ${windowParameters.y}    ${3}
     FOR    ${move}    IN    @{move_list}
         Log    ${move}
         ${mouse}=    Get mouse position
