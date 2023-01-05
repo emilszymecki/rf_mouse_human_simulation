@@ -7,6 +7,8 @@ sqrt5 = np.sqrt(5)
 
 def wind_mouse(start_x, start_y, dest_x, dest_y, G_0=8, W_0=4, M_0=18, D_0=25, move_mouse=lambda x,y: None):
     '''
+    https://ben.land/post/2021/04/25/windmouse-human-mouse-movement/
+    
     WindMouse algorithm. Calls the move_mouse kwarg with each new step.
     Released under the terms of the GPLv3 license.
     G_0 - magnitude of the gravitational fornce
